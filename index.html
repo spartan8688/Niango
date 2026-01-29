@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金满楼年糕 | 新加坡顶级传统年糕与年饼</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+        }
+        .red-gradient {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+        }
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD700' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .lantern {
+            animation: swing 3s ease-in-out infinite;
+            transform-origin: top center;
+        }
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        .image-hover {
+            transition: transform 0.5s ease;
+        }
+        .image-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-red-900/95 backdrop-blur-md text-white shadow-lg transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-red-900 font-bold text-xl serif">金</div>
+                    <span class="text-2xl font-bold serif tracking-widest">金满楼</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#products" class="hover:text-yellow-400 transition-colors">招牌年糕</a>
+                    <a href="#symbolism" class="hover:text-yellow-400 transition-colors">吉祥寓意</a>
+                    <a href="#how-to-eat" class="hover:text-yellow-400 transition-colors">享用方式</a>
+                    <a href="#testimonials" class="hover:text-yellow-400 transition-colors">顾客好评</a>
+                </div>
+                <button class="bg-yellow-500 text-red-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition-all transform hover:scale-105">
+                    立即订购
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Nian Gao Image -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden red-gradient pattern-bg">
+        <div class="absolute inset-0 bg-black/20"></div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 lantern opacity-80">
+            <div class="w-16 h-20 bg-red-600 rounded-lg shadow-2xl border-2 border-yellow-400 flex items-center justify-center">
+                <span class="text-yellow-400 text-2xl font-bold serif">福</span>
+            </div>
+        </div>
+        <div class="absolute top-32 right-20 lantern opacity-80" style="animation-delay: 1s;">
+            <div class="w-16 h-20 bg-red-600 rounded-lg shadow-2xl border-2 border-yellow-400 flex items-center justify-center">
+                <span class="text-yellow-400 text-2xl font-bold serif">财</span>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="text-white text-center md:text-left">
+                <div class="mb-6 inline-block">
+                    <span class="bg-yellow-500 text-red-900 px-4 py-1 rounded-full text-sm font-bold tracking-wider">2026 农历新年限定</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold serif mb-6 leading-tight">
+                    传统年糕<span class="text-yellow-400">年年高</span>
+                </h1>
+                <p class="text-xl mb-4 text-red-100 font-light">
+                    新加坡四代人的传承手艺 · 纯手工制作 · 无防腐剂
+                </p>
+                <p class="text-lg mb-8 text-red-200">
+                    选用泰国上等糯米与马六甲椰糖，遵循古法蒸制48小时。寓意步步高升，是拜年送礼的首选佳品。
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button class="bg-yellow-500 text-red-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center gap-2">
+                        <span>立即预订</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                    <button class="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 hover:text-red-900 transition-all">
+                        查看礼盒套装
+                    </button>
+                </div>
+
+                <div class="mt-8 grid grid-cols-3 gap-4 max-w-md mx-auto md:mx-0">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 text-center">
+                        <div class="text-2xl font-bold text-yellow-400">48小时</div>
+                        <div class="text-xs text-red-100">古法蒸制</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 text-center">
+                        <div class="text-2xl font-bold text-yellow-400">0添加</div>
+                        <div class="text-xs text-red-100">纯天然食材</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 text-center">
+                        <div class="text-2xl font-bold text-yellow-400">4代</div>
+                        <div class="text-xs text-red-100">传承手艺</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image - Traditional Nian Gao -->
+            <div class="relative float-animation">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-yellow-400/30">
+                    <img src="https://kimi-web-img.moonshot.cn/img/staticcookist.akamaized.net/ee7d6650448da2e684141ad1637714a0499162c1.jpg" 
+                         alt="传统圆形年糕" 
+                         class="w-full h-auto object-cover image-hover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                        <p class="text-white text-center font-bold text-lg">传统椰糖年糕 · 寓意团圆美满</p>
+                    </div>
+                </div>
+                <!-- Decorative badge -->
+                <div class="absolute -top-4 -right-4 bg-yellow-500 text-red-900 w-24 h-24 rounded-full flex items-center justify-center font-bold text-center text-sm shadow-xl transform rotate-12">
+                    <span class="leading-tight">古法<br>手工</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- Auspicious Meaning Section -->
+    <section id="symbolism" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl font-bold serif text-red-900 mb-4">吉祥寓意</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="mt-4 text-gray-600">每一口都是对新年的美好祝愿</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 scroll-reveal">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl">🎋</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-3 serif text-red-900">步步高升</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        "年糕"谐音"年高"，象征事业、学业、生活一年比一年更上一层楼。送给长辈寓意健康长寿，送给晚辈寓意学业进步。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl">🧧</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-3 serif text-red-900">甜甜蜜蜜</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        椰糖与糯米的天然甜味，寓意新的一年生活甜美、家庭和睦。传统圆形设计更象征团团圆圆，阖家欢乐。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl">💰</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-3 serif text-red-900">财源滚滚</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        金黄色泽象征财富与丰收，传统上在正月初五迎财神时食用，祈求新的一年财运亨通、生意兴隆。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section with Real Images -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-yellow-600 font-bold tracking-wider uppercase">精选产品</span>
+                <h2 class="text-4xl font-bold serif text-red-900 mt-2">招牌年糕系列</h2>
+                <p class="mt-4 text-gray-600">传承古法，创新口味，满足现代新加坡人的味蕾</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 - Traditional -->
+                <div class="group relative bg-stone-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.pressurecookrecipes.com/5fb6a24eeed82cb7d8b832863e74b68c4b68c833.jpg" 
+                             alt="传统椰糖年糕" 
+                             class="w-full h-full object-cover image-hover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">畅销</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold serif text-gray-900 mb-2">传统椰糖年糕</h3>
+                        <p class="text-gray-600 text-sm mb-4">正宗古法制作，选用马六甲椰糖，香滑软糯</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$28.80</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Sliced/Fried Style -->
+                <div class="group relative bg-stone-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/healthynibblesandbits.com/4e27c15ac1f27d4db901e888928b152145b2a04b.jpg" 
+                             alt="切片年糕展示" 
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold serif text-gray-900 mb-2">手工切片年糕</h3>
+                        <p class="text-gray-600 text-sm mb-4">预切薄片，方便煎食，外酥内软，传统风味</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$32.80</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 - Fried Nian Gao -->
+                <div class="group relative bg-stone-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/63f37e9b882d99ad4a044fddfcefd0d8959f8463.jpg" 
+                             alt="香煎年糕" 
+                             class="w-full h-full object-cover image-hover">
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-red-900 px-3 py-1 rounded-full text-xs font-bold">即食</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold serif text-gray-900 mb-2">黄金煎年糕</h3>
+                        <p class="text-gray-600 text-sm mb-4">裹上蛋液现煎，外酥内软，附赠椰糖蘸酱</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$35.80</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Onde Onde Style -->
+                <div class="group relative bg-stone-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/215dc7f5fc44893bef1256e081d3ba41e540b76a.jpg" 
+                             alt="椰丝年糕球" 
+                             class="w-full h-full object-cover image-hover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">新品</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold serif text-gray-900 mb-2">椰丝年糕球</h3>
+                        <p class="text-gray-600 text-sm mb-4">新加坡特色onde onde风味，椰丝包裹，一口一个</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$25.80</span>
+                            <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CNY Goodies Bundle -->
+            <div class="mt-16 bg-red-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden scroll-reveal">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full -mr-32 -mt-32"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold serif mb-4">新春豪华礼盒套装</h3>
+                        <p class="text-red-100 mb-6">包含传统年糕、黄梨酥、鸡蛋卷、虾米卷，一盒满足所有拜年需求。精美包装，送礼大方。</p>
+                        <ul class="space-y-2 text-red-200 mb-6">
+                            <li class="flex items-center gap-2">✓ 传统椰糖年糕 500g</li>
+                            <li class="flex items-center gap-2">✓ 手工黄梨酥 12粒</li>
+                            <li class="flex items-center gap-2">✓ 炭烧鸡蛋卷 1罐</li>
+                            <li class="flex items-center gap-2">✓ 香辣虾米卷 1罐</li>
+                        </ul>
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl font-bold text-yellow-400">$88.80</span>
+                            <span class="text-lg text-red-300 line-through">$108.00</span>
+                            <span class="bg-yellow-500 text-red-900 px-3 py-1 rounded-full text-sm font-bold">省$19</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <img src="https://kimi-web-img.moonshot.cn/img/healthynibblesandbits.com/4e27c15ac1f27d4db901e888928b152145b2a04b.jpg" 
+                             alt="年糕礼盒" 
+                             class="rounded-2xl shadow-2xl border-4 border-yellow-400/30">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Enjoy with Real Images -->
+    <section id="how-to-eat" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl font-bold serif text-red-900 mb-4">享用方式</h2>
+                <p class="text-gray-600">多种吃法，满足不同口味</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg scroll-reveal">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/staticcookist.akamaized.net/ee7d6650448da2e684141ad1637714a0499162c1.jpg" 
+                             alt="蒸年糕" 
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl -mt-12 border-4 border-white relative z-10">🍵</div>
+                        <h3 class="text-xl font-bold mb-2">传统蒸热</h3>
+                        <p class="text-gray-600 text-sm">切片后蒸5-10分钟，恢复软糯口感，配热茶享用，最传统的吃法。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/71e113e8ce257b864cb7e2eca782d54c5bb521a5.jpeg" 
+                             alt="香煎年糕" 
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl -mt-12 border-4 border-white relative z-10">🍳</div>
+                        <h3 class="text-xl font-bold mb-2">香煎年糕</h3>
+                        <p class="text-gray-600 text-sm">裹上蛋液，慢火煎至两面金黄，外酥内软，是新加坡人最爱的吃法。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/215dc7f5fc44893bef1256e081d3ba41e540b76a.jpg" 
+                             alt="椰丝年糕球" 
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl -mt-12 border-4 border-white relative z-10">❄️</div>
+                        <h3 class="text-xl font-bold mb-2">创意冷食</h3>
+                        <p class="text-gray-600 text-sm">切成小块裹上椰丝，放入冰箱冷藏后食用，口感Q弹，适合炎热天气。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl font-bold serif text-red-900 mb-4">顾客好评</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-md scroll-reveal">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-4">"每年过年必买！椰糖香味浓郁，口感刚好不会太甜。奶奶说这才是她小时候的味道。"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-200 rounded-full flex items-center justify-center text-red-800 font-bold">L</div>
+                        <div>
+                            <div class="font-bold text-gray-900">Lim Mei Ling</div>
+                            <div class="text-sm text-gray-500">忠实顾客 · 第5年购买</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-md scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-4">"送给马来西亚的亲戚，包装非常精美有面子。煎年糕外脆内软，家里小孩抢着吃！"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold">T</div>
+                        <div>
+                            <div class="font-bold text-gray-900">Tan Wei Ming</div>
+                            <div class="text-sm text-gray-500">企业客户 · 订购50盒</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl shadow-md scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-4">"椰丝年糕球很有创意，结合了传统onde onde的风味。冷冻后吃口感很好，不会腻。"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center text-green-800 font-bold">C</div>
+                        <div>
+                            <div class="font-bold text-gray-900">Chen Shu Fen</div>
+                            <div class="text-sm text-gray-500">新顾客 · 会再回购</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-red-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-4xl font-bold serif text-red-900 mb-4">精美展示</h2>
+                <p class="text-gray-600">传统与创新的完美融合</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden rounded-2xl scroll-reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/staticcookist.akamaized.net/ee7d6650448da2e684141ad1637714a0499162c1.jpg" 
+                         alt="年糕展示1" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold">传统圆形</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                    <img src="https://kimi-web-img.moonshot.cn/img/healthynibblesandbits.com/4e27c15ac1f27d4db901e888928b152145b2a04b.jpg" 
+                         alt="年糕展示2" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold">切片展示</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/71e113e8ce257b864cb7e2eca782d54c5bb521a5.jpeg" 
+                         alt="年糕展示3" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold">香煎美味</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl scroll-reveal" style="transition-delay: 0.3s;">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.huangkitchen.com/215dc7f5fc44893bef1256e081d3ba41e540b76a.jpg" 
+                         alt="年糕展示4" 
+                         class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold">创意吃法</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Info -->
+    <section class="py-16 bg-red-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="scroll-reveal">
+                    <div class="text-4xl mb-2">🚚</div>
+                    <h3 class="font-bold text-lg mb-1">全岛配送</h3>
+                    <p class="text-red-200 text-sm">消费满$100免费送货</p>
+                </div>
+                <div class="scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="text-4xl mb-2">📦</div>
+                    <h3 class="font-bold text-lg mb-1">新鲜制作</h3>
+                    <p class="text-red-200 text-sm">下单后48小时内制作</p>
+                </div>
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="text-4xl mb-2">🎁</div>
+                    <h3 class="font-bold text-lg mb-1">精美包装</h3>
+                    <p class="text-red-200 text-sm">免费贺年卡与红包封</p>
+                </div>
+                <div class="scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="text-4xl mb-2">✅</div>
+                    <h3 class="font-bold text-lg mb-1">品质保证</h3>
+                    <p class="text-red-200 text-sm">不满意全额退款</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-red-800 to-red-900 relative overflow-hidden">
+        <div class="absolute inset-0 pattern-bg opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold serif text-white mb-6">早鸟优惠进行中</h2>
+            <p class="text-xl text-red-100 mb-8">即日起至正月十五前订购，享85折优惠。数量有限，售完即止！</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-6 py-3 text-white">
+                    <span class="block text-2xl font-bold">15%</span>
+                    <span class="text-sm">早鸟折扣</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-6 py-3 text-white">
+                    <span class="block text-2xl font-bold">Free</span>
+                    <span class="text-sm">精美礼袋</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-6 py-3 text-white">
+                    <span class="block text-2xl font-bold">28</span>
+                    <span class="text-sm">剩余天数</span>
+                </div>
+            </div>
+
+            <button class="bg-yellow-500 text-red-900 px-10 py-4 rounded-full font-bold text-xl hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-2xl">
+                立即预订享优惠
+            </button>
+            
+            <p class="mt-4 text-red-200 text-sm">支持PayNow、信用卡、支付宝付款</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-red-900 font-bold serif">金</div>
+                        <span class="text-xl font-bold serif">金满楼</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        成立于1985年，新加坡本土品牌。四代人坚持传统手艺，为您呈现最正宗的农历新年滋味。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-yellow-500 transition-colors">关于我们</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-colors">产品目录</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-colors">企业订购</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-colors">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📍 牛车水大厦 #02-108</li>
+                        <li>📞 +65 6123 4567</li>
+                        <li>📧 hello@jinmanlou.sg</li>
+                        <li>🕐 每日 9am - 7pm</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">关注我们</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-red-900 transition-all">FB</a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-red-900 transition-all">IG</a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-red-900 transition-all">WX</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 text-center text-sm">
+                <p>&copy; 2026 金满楼 Jin Man Lou. 保留所有权利. | 新加坡食品局注册号: S12345678A</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
